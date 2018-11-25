@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1225.0" style="-fx-background-color: white; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dinemore.controller.admin.AdminViewOrderController">
+   <children>
+      <Label layoutX="21.0" layoutY="44.0" prefHeight="42.0" prefWidth="189.0" text="Search Order">
+         <font>
+            <Font name="Times New Roman Bold" size="23.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchOrderText" layoutX="21.0" layoutY="86.0" onKeyReleased="#searchOrderKeyReleased" prefHeight="42.0" prefWidth="488.0">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="orderTable" layoutX="21.0" layoutY="178.0" prefHeight="410.0" prefWidth="1197.0">
+        <columns>
+          <TableColumn prefWidth="79.0" text="Order Id" />
+          <TableColumn prefWidth="113.0" text="Customer Id" />
+            <TableColumn prefWidth="177.0" text="Customer Name" />
+            <TableColumn prefWidth="194.0" text="Customer Address" />
+            <TableColumn prefWidth="236.0" text="Meal Collection" />
+            <TableColumn prefWidth="148.0" text="Total Amount" />
+            <TableColumn prefWidth="131.0" text="Status" />
+            <TableColumn prefWidth="118.0" text="Date Time" />
+        </columns>
+      </TableView>
+      <Label fx:id="dateLabel" layoutX="855.0" layoutY="24.0" prefHeight="42.0" prefWidth="148.0" text="Date">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="timeLabel" layoutX="1028.0" layoutY="24.0" prefHeight="42.0" prefWidth="148.0" text="Time">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="328.0" prefWidth="763.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dinemore.controller.login.LogInController">
+   <children>
+      <ImageView fitHeight="305.0" fitWidth="299.0" layoutX="8.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/276681.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="432.0" layoutY="24.0" prefHeight="51.0" prefWidth="299.0" text="more LogIn Panel">
+         <font>
+            <Font name="MintSpirit-Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="360.0" layoutY="24.0" prefHeight="51.0" prefWidth="79.0" text="Dine" textFill="#fdce08f7">
+         <font>
+            <Font name="MintSpiritNo2-BoldItalic" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="343.0" layoutY="90.0" prefHeight="36.0" prefWidth="144.0" text="User Name">
+         <font>
+            <Font name="Times New Roman Bold" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userNameText" layoutX="343.0" layoutY="128.0" onAction="#userNameTextAction" prefHeight="36.0" prefWidth="271.0">
+         <font>
+            <Font name="Times New Roman Bold" size="22.0" />
+         </font>
+      </TextField>
+      <Label layoutX="343.0" layoutY="195.0" prefHeight="36.0" prefWidth="144.0" text="Password">
+         <font>
+            <Font name="Times New Roman Bold" size="28.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwordText" layoutX="346.0" layoutY="231.0" onAction="#passwordTextAction" prefHeight="41.0" prefWidth="271.0">
+         <font>
+            <Font name="Times New Roman Bold" size="23.0" />
+         </font>
+      </PasswordField>
+   </children>
+</AnchorPane>

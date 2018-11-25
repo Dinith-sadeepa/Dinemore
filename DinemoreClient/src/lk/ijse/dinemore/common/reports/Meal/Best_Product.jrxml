@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-11-19T11:55:50 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Best_Customer" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="96044314-a040-46be-aea9-c8d0943bc95b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Dinemore_Data"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="118431a4-5e87-4fb7-a10f-43a7c453d58e">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Dinemore_Data"/>
+		<queryString language="SQL">
+			<![CDATA[
+select od.mealId,m.mealName,m.mealCategory,count(od.mealId)*od.orderdQty as no_of_meals from orderDetail od,meal m
+where od.mealId = m.mealId
+group by mealId
+order by count(od.mealId) desc;]]>
+		</queryString>
+		<field name="mealId" class="java.lang.Integer"/>
+		<field name="mealName" class="java.lang.String"/>
+		<field name="mealCategory" class="java.lang.String"/>
+		<field name="no_of_meals" class="java.lang.Long"/>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select customerId,count(orderId) as no_of_orders from orders 
+group by customerId
+order by 2 desc]]>
+	</queryString>
+	<field name="customerId" class="java.lang.Integer"/>
+	<field name="no_of_orders" class="java.lang.Long"/>
+	<group name="customerId">
+		<groupExpression><![CDATA[$F{customerId}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="0" width="176" height="30" uuid="06895a4f-7d1a-4d3c-8cb5-478f46dfdeb1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="15"/>
+				</textElement>
+				<text><![CDATA[Dinemore (pvt) Ltd]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="7" width="190" height="20" uuid="62c6cf23-b18f-4280-a271-226f1f4d166c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Best Meals Full Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="4" width="30" height="24" uuid="c008f198-1e86-46db-9b48-ade544fa8380"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="443" y="5" width="100" height="24" uuid="fc6c5c47-1af9-49b7-a3dd-f17e95e67942"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="75" splitType="Stretch">
+			<componentElement>
+				<reportElement x="91" y="8" width="380" height="60" uuid="45e75c2f-7f32-48ec-9866-da1789c2b21d">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="8aea90ad-1fc0-4960-8b30-109a47694f57">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="61512c9f-181a-437c-b483-4a7ca775e9cd">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="8dcb63e4-8913-4bbd-aaab-ea806f2a9a6b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Meal Id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="0f1d8e1f-19e2-4223-ad62-88dfabb4cbc9"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{mealId}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="c2ed805c-5c7e-4814-b681-02c27880c4d1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="194d532d-871a-4fee-bc60-fce04b59e293"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Meal Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="c482133c-e79a-4e69-a848-12ee5a2bbb15"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{mealName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="f0090d78-326c-4691-88d7-9f509e998f1e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="219248e1-3ff9-4344-9836-210281c26d60"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Meal Category]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="8cb5efa6-98b1-4f56-bc28-c24efbb154b1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{mealCategory}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="223dcee5-45ba-4fa1-bcf5-854f65d4cf2b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="439c894a-4689-409c-bb98-ac1f5e6337d6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[No Of Meals]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="30" uuid="6f2ad176-05fe-4f76-b93c-b20280711187"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{no_of_meals}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="0" width="90" height="22" uuid="ab7cb8ca-787a-4a13-9cdd-7c7c88aa421c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Meals Count :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="94" y="3" width="120" height="16" uuid="94d34b9d-cba7-4946-844a-38088bd2eb75"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="425" y="3" width="100" height="26" uuid="e04f933d-1173-458d-bc0c-c59f14feffbf"/>
+				<text><![CDATA[............................... Authorized Signature]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

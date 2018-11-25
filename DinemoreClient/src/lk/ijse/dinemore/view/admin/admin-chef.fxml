@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1225.0" style="-fx-background-color: white; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dinemore.controller.admin.AdminChefController">
+   <children>
+      <Label layoutX="21.0" layoutY="44.0" prefHeight="42.0" prefWidth="172.0" text="Search Chefs">
+         <font>
+            <Font name="Times New Roman Bold" size="23.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchChefText" layoutX="21.0" layoutY="86.0" onKeyReleased="#searchTextKeyReleased" prefHeight="42.0" prefWidth="488.0">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="chefTable" layoutX="21.0" layoutY="178.0" onMouseClicked="#chefTableClicked" prefHeight="216.0" prefWidth="1197.0">
+         <columns>
+            <TableColumn prefWidth="94.0" text="Chef Id" />
+            <TableColumn prefWidth="207.0" text="Chef Name" />
+            <TableColumn prefWidth="153.0" text="Chef NIC" />
+            <TableColumn prefWidth="175.0" text="Chef Address" />
+            <TableColumn prefWidth="169.0" text="Chef UserName" />
+            <TableColumn prefWidth="188.0" text="Chef Password" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label fx:id="dateLabel" layoutX="855.0" layoutY="24.0" prefHeight="42.0" prefWidth="148.0" text="Date">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="timeLabel" layoutX="1028.0" layoutY="24.0" prefHeight="42.0" prefWidth="148.0" text="Time">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="21.0" layoutY="433.0" prefHeight="216.0" prefWidth="499.0" style="-fx-border-color: black;">
+         <children>
+            <JFXTextField fx:id="chefNameText" labelFloat="true" layoutX="13.0" layoutY="78.0" onAction="#chefNameTextAction" prefHeight="42.0" prefWidth="271.0" promptText="Chef Name" />
+            <JFXTextField fx:id="chefAddressText" labelFloat="true" layoutX="14.0" layoutY="144.0" onAction="#chefAddressTextAction" prefHeight="42.0" prefWidth="326.0" promptText="Chef Address" />
+            <JFXTextField fx:id="chefNICText" labelFloat="true" layoutX="300.0" layoutY="78.0" onAction="#chefNICTextAction" prefHeight="42.0" prefWidth="183.0" promptText="Chef NIC" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="42.0" prefWidth="286.0" text="Manage Chefs">
+               <font>
+                  <Font name="MintSpiritNo2-Bold" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="593.0" layoutY="433.0" prefHeight="147.0" prefWidth="546.0" style="-fx-border-color: black;">
+         <children>
+            <JFXTextField fx:id="chefUserNameText" labelFloat="true" layoutX="13.0" layoutY="78.0" onAction="#chefUserNameTextAction" prefHeight="42.0" prefWidth="194.0" promptText="Chef User Name" />
+            <JFXTextField fx:id="chefPasswordText" labelFloat="true" layoutX="259.0" layoutY="78.0" onAction="#chefPasswordTextAction" prefHeight="42.0" prefWidth="183.0" promptText="Chef Password" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="42.0" prefWidth="286.0" text="LogIn Details">
+               <font>
+                  <Font name="MintSpiritNo2-Bold" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="addChefButton" layoutX="590.0" layoutY="628.0" onAction="#addChefButtonAction" prefHeight="42.0" prefWidth="148.0" style="-fx-background-color: green;" text="Add Chef" textFill="#fcfcfc">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="deleteChefButton" disable="true" layoutX="784.0" layoutY="628.0" onAction="#deleteChefButtonAction" prefHeight="42.0" prefWidth="164.0" style="-fx-background-color: red;" text="Delete Chef" textFill="#fcfcfc">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="updateChefButton" disable="true" layoutX="1002.0" layoutY="628.0" onAction="#updateChefButtonAction" prefHeight="42.0" prefWidth="172.0" style="-fx-background-color: yellow;" text="Update Chef" textFill="#fcfcfc">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

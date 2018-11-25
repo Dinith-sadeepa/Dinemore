@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="782.0" prefWidth="1393.0" style="-fx-background-color: white;" stylesheets="@../../css/shadow.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dinemore.controller.delivery.DeliveryDashboardController">
+   <children>
+      <AnchorPane layoutY="14.0" prefHeight="755.0" prefWidth="138.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="9.0" layoutY="357.0" prefHeight="44.0" prefWidth="127.0" text="Take Order">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="100.0" fitWidth="112.0" layoutX="19.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/contract.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="9.0" layoutY="255.0" onAction="#takeOrderButtonAction" prefHeight="140.0" prefWidth="120.0" text=" ">
+               <font>
+                  <Font name="MintSpiritNo2-Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="10.0" layoutY="584.0" prefHeight="44.0" prefWidth="127.0" text="View Order">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="100.0" fitWidth="112.0" layoutX="19.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/curriculum-1.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="9.0" layoutY="483.0" onAction="#viewOrderButtonAction" prefHeight="140.0" prefWidth="120.0" text=" ">
+               <font>
+                  <Font name="MintSpiritNo2-Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="93.0" fitWidth="100.0" layoutX="19.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/bicycle.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loadPane" layoutX="149.0" layoutY="14.0" prefHeight="755.0" prefWidth="1225.0" style="-fx-background-color: grey;" styleClass="shadow" />
+   </children>
+</AnchorPane>

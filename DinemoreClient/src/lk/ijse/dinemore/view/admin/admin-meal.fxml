@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1225.0" style="-fx-background-color: white; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dinemore.controller.admin.AdminMealController">
+   <children>
+      <Label layoutX="21.0" layoutY="44.0" prefHeight="42.0" prefWidth="294.0" text="Search Meal Collection">
+         <font>
+            <Font name="Times New Roman Bold" size="23.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchMealText" layoutX="21.0" layoutY="86.0" onKeyReleased="#searchTextKeyReleased" prefHeight="42.0" prefWidth="488.0">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="mealTable" layoutX="69.0" layoutY="183.0" onMouseClicked="#mealTableClicked" prefHeight="216.0" prefWidth="1088.0">
+         <columns>
+            <TableColumn prefWidth="94.0" text="Meal Id" />
+            <TableColumn prefWidth="207.0" text="Meal Name" />
+            <TableColumn prefWidth="191.0" text="Meal Category" />
+            <TableColumn prefWidth="188.0" text="Meal Unit Price" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label fx:id="dateLabel" layoutX="855.0" layoutY="24.0" prefHeight="42.0" prefWidth="148.0" text="Date">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="timeLabel" layoutX="1028.0" layoutY="24.0" prefHeight="42.0" prefWidth="148.0" text="Time">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="21.0" layoutY="433.0" prefHeight="216.0" prefWidth="499.0" style="-fx-border-color: black;">
+         <children>
+            <JFXTextField fx:id="mealNameText" labelFloat="true" layoutX="13.0" layoutY="78.0" onAction="#mealNameTextAction" prefHeight="42.0" prefWidth="271.0" promptText="Meal Name" />
+            <JFXTextField fx:id="mealUnitPriceText" labelFloat="true" layoutX="14.0" layoutY="144.0" onAction="#mealUnitPriceTextAction" prefHeight="42.0" prefWidth="172.0" promptText="Meal UnitPrice" />
+            <JFXTextField fx:id="mealCategoryText" labelFloat="true" layoutX="300.0" layoutY="78.0" onAction="#mealCategoryTextAction" prefHeight="42.0" prefWidth="183.0" promptText="Meal Category" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="42.0" prefWidth="286.0" text="Manage Meal">
+               <font>
+                  <Font name="MintSpiritNo2-Bold" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="addMealButton" layoutX="585.0" layoutY="520.0" onAction="#addMealButtonAction" prefHeight="42.0" prefWidth="148.0" style="-fx-background-color: green;" text="Add Meal" textFill="#fcfcfc">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="deleteMealButton" disable="true" layoutX="779.0" layoutY="520.0" onAction="#deleteMealButtonAction" prefHeight="42.0" prefWidth="164.0" style="-fx-background-color: red;" text="Delete Meal" textFill="#fcfcfc">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="updateMealButton" disable="true" layoutX="997.0" layoutY="520.0" onAction="#updateMealButtonAction" prefHeight="42.0" prefWidth="172.0" style="-fx-background-color: yellow;" text="Update Meal" textFill="#fcfcfc">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
